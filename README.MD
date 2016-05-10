@@ -10,8 +10,13 @@ bower install angular-ui-switch --save-dev
 
 app.js add --- 'uiSwitch'
 angForm.controlType.$invalid && !angFormmyForm.controlType.$pristine && angForm.controlType.$touched
-<switch id="enabled" name="enabled" ng-model="enabled" class="green"></switch>
 
+
+<switch id="enabled" name="enabled" ng-model="vm.enabled"  ng-change="vm.changeCallback()" class="green"></switch>
+ vm.enabled=true;
+        vm.changeCallback=function(enable){
+            console.log(vm.enabled);
+        }
 
 .row.ng-scope {
     background-color: #fff;
